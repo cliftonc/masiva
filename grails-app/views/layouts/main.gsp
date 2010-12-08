@@ -8,7 +8,7 @@
     </head>
     <body>
     	<div class="header container_16">	        
-	        <div id="damongoLogo" class="alpha grid_16"><a href="http://damongo.org"><img src="${resource(dir:'images',file:'damongo_logo.png')}" alt="Damongo" border="0" /></a></div>	        
+	        <div id="masivaLogo" class="alpha grid_16"><a href="http://cliftonc.github.com/masiva"><img src="${resource(dir:'images',file:'masiva_logo.png')}" alt="masiva" border="0" /></a></div>	        
         </div>
         <div id="spinner" class="spinner container_16" style="display:none;">
 	            <img src="${resource(dir:'images',file:'spinner.gif')}" alt="${message(code:'spinner.alt',default:'Loading...')}" />
