@@ -8,15 +8,23 @@
         <title><g:message code="default.list.label" args="[entityName]" /></title>
     </head>
     <body>
-        <div class="nav container_16">
-            <span class="menuButton"><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></span>
-        </div>
         <div class="clear"></div>
-        <div id="body" class="container_16">
+        <div id="body">
+		    <div class="container_16">
+        
+		        <div class="nav">
+		            <span class="menuButton"><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></span>
+		        </div>	        
+		        <div class="paginateButtons">
+	                <g:paginate total="${damFileInstanceTotal}" />
+	            </div>
+	           <div class="clear"></div>
+        	</div>                
             <g:if test="${flash.message}">
 	            <div class="message alpha grid_16">${flash.message}</div>
             </g:if>
         	<div class="clear"></div>    
+            <div class="container_16">
                    	<g:each in="${damFileInstanceList}" status="i" var="damFileInstance">
                     <div id="${damFileInstance.id}" class="asset grid_2 <%
 											if(i % 8 == 0) {
@@ -33,8 +41,7 @@
             
             <div class="clear"></div>
             
-            <div class="paginateButtons">
-                <g:paginate total="${damFileInstanceTotal}" />
+            </div>
             </div>
         </div>
     </body>

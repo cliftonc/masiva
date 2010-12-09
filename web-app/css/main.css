@@ -1,7 +1,32 @@
 html * {
-    margin: 0;
+    margin: 0;    
+    background:#003042;
+    
     /*padding: 0; SELECT NOT DISPLAYED CORRECTLY IN FIREFOX */
 }
+
+body{
+	background: #00384C url(bg_html.png) no-repeat 0% 0%;
+	color: #A9C9D5;
+	font-family: 'lucida grande', 'lucida sans unicode', 'lucida sans', arial, sans-serif;
+	font-size: 12px;
+	min-width: 990px;
+	text-align: left;
+}
+
+div#body {
+	width: 100%;
+	background: none;
+}
+
+.alt, .hidden, .h-alt { position:absolute;left:-9999px; }
+
+
+/*div#body-inner {
+	background: #AAA url(diagonal_stripe.png) repeat 50% 50%;
+	opacity:0.5;
+	border: solid 1px grey;
+}*/
 
 /* Specific */
 img.asset-image {
@@ -9,32 +34,60 @@ img.asset-image {
 	width: 100%;		
 }
 
+div#header {
+	background: #003245 url(bg_header.png) no-repeat 50% 100%;	
+	height: 80px;
+	margin-bottom: 40px;
+}
+
+div.container {
+	margin: 0px auto;
+	text-align: left;
+	width: 940px;
+}
+
+/* @group Wrap: Header */
+div#header { background:#003245 url(bg_header.png) no-repeat center bottom;border-bottom:1px solid #114a61;margin-bottom:20px;height:80px; }
+div#header #logo { display:block;text-indent:-9999px;background:transparent url(logo_web.png) no-repeat left center;width:120px;height:80px;float:left;margin-right:120px;outline:none; }
+div#header #nav { float:left;font-size:12px; background: none;}
+div#header #nav li { display:block;float:left; font:bold 12px "lucida grande", "lucida sans unicode", "lucida sans", arial, sans-serif; background: none;}
+div#header #nav li.current { background:#023d53 url(bg_nav_on.png) no-repeat left bottom;color:#fff; }
+div#header #nav li.current a {color:#fff;text-shadow: #001d2b 0px 1px 2px}
+div#header #nav li.current span { display:block;background:transparent url(bg_nav_on.png) no-repeat right bottom;margin-left:2px; }
+div#header #nav li a { display:block;height:80px;line-height:110px;padding:0 14px;outline:none;background: none;}
+div#header #nav li.current a, div#header #nav li.current a:hover { background:transparent url(hover_nav_green.png) no-repeat center bottom;padding:0 14px 0 12px; }
+div#header #nav li a:hover { background:transparent url(hover_nav.png) no-repeat center bottom;color:#fff; }
+/* @end */
+
+
 div.clear-row {
 	clear:both;
 	border:solid 3px blue;
 }
 
 div.asset-image {
-	padding: 3px !important;
+	/**/
+	padding: 2px !important;
+	background-color: white;
+	padding-bottom: 2px !important;
 }
 
 div.asset {
 	float: left;
-	border: solid 1px silver;
+	border:solid 3px white;	
+	-moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+     border-radius: 5px;	
 	margin-top: 5px;
 	margin-bottom: 5px;
-	margin-left: 10px;
-	margin-right: 10px;	
-}
-
-div.header {
-	margin-top: 10px;
-	margin-bottom: 20px;
+	margin-left: 5px;
+	margin-right: 5px;	
 }
 
 div.asset-data {
 	display:none;
 }
+
 
 /* GENERAL */
 
@@ -42,14 +95,6 @@ div.asset-data {
     padding: 5px;
     position: absolute;
     right: 0;
-}
-
-body {
-    background: #fff;
-    color: #333;
-    font: 11px verdana, arial, helvetica, sans-serif;
-    margin:0px;
-    padding:0px;    
 }
 
 #grailsLogo {
@@ -101,34 +146,34 @@ input:focus, select:focus, textarea:focus {
 /* NAVIGATION MENU */
 
 .nav {
-    background: #fff url(../images/skin/shadow.jpg) bottom repeat-x;
-    border: 1px solid #ccc;
-    border-style: solid none solid none;
-    margin-top: 5px;
+    margin-top: 0px;
     padding: 7px 12px;
+    background: none;
+    float: left;
 }
 
 .menuButton {
     font-size: 10px;
     padding: 0 5px;
+    background: none;
 }
 .menuButton a {
-    color: #333;
+    color: #A9C9D5;
     padding: 4px 6px;
 }
 .menuButton a.home {
     background: url(../images/skin/house.png) center left no-repeat;
-    color: #333;
+    color: #A9C9D5;
     padding-left: 25px;
 }
 .menuButton a.list {
     background: url(../images/skin/database_table.png) center left no-repeat;
-    color: #333;
+    color: #A9C9D5;
     padding-left: 25px;
 }
 .menuButton a.create {
     background: url(../images/skin/database_add.png) center left no-repeat;
-    color: #333;
+    color: #A9C9D5;
     padding-left: 25px;
 }
 
@@ -186,7 +231,6 @@ td, th {
     vertical-align: top;
 }
 th {
-    background: #fff url(../images/skin/shadow.jpg);
     color: #666;
     font-size: 11px;
     font-weight: bold;
@@ -233,13 +277,12 @@ th.desc a {
 /* PAGINATION */
 
 .paginateButtons {
-    background: #fff url(../images/skin/shadow.jpg) bottom repeat-x;
-    border: 1px solid #ccc;
-    border-top: 0;
+	background: none;
     color: #666;
     font-size: 10px;
     overflow: hidden;
     padding: 10px 3px;
+    float: right;
 }
 .paginateButtons a {
     background: #fff;
@@ -250,7 +293,14 @@ th.desc a {
     padding: 2px 6px;
 }
 .paginateButtons span {
-    padding: 2px 3px;
+    padding: 2px 5px 1 5;
+    margin: 0 3px;
+    
+    background: none;
+    color: #FFFFFF;    
+     background: #343434;
+    border: 1px solid #ccc;
+    border-color: #ccc #aaa #aaa #ccc;
 }
 
 /* DIALOG */
