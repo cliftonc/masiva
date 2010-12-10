@@ -34,22 +34,16 @@ img.asset-image {
 	width: 100%;		
 }
 
-div#header {
-	background: #003245 url(bg_header.png) no-repeat 50% 100%;	
-	height: 80px;
-	margin-bottom: 40px;
-}
-
 div.container {
 	margin: 0px auto;
 	text-align: left;
-	width: 940px;
+	width: 96%;
 }
 
 /* @group Wrap: Header */
 div#header { background:#003245 url(bg_header.png) no-repeat center bottom;border-bottom:1px solid #114a61;margin-bottom:20px;height:80px; }
-div#header #logo { display:block;text-indent:-9999px;background:transparent url(logo_web.png) no-repeat left center;width:120px;height:80px;float:left;margin-right:120px;outline:none; }
-div#header #nav { float:left;font-size:12px; background: none;}
+div#header #logo { display:block; text-indent:-9999px;background:transparent url(logo_web.png) no-repeat left center;width:300px;height:80px; margin-left: 0; float:left;outline:none; }
+div#header #nav { float:right;font-size:12px; background: none;}
 div#header #nav li { display:block;float:left; font:bold 12px "lucida grande", "lucida sans unicode", "lucida sans", arial, sans-serif; background: none;}
 div#header #nav li.current { background:#023d53 url(bg_nav_on.png) no-repeat left bottom;color:#fff; }
 div#header #nav li.current a {color:#fff;text-shadow: #001d2b 0px 1px 2px}

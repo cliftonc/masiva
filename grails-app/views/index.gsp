@@ -4,7 +4,7 @@
         <meta name="layout" content="main" />
         <style type="text/css" media="screen">
 
-        #nav {
+        #nav_index {
             margin-top:20px;
             margin-left:30px;
             width:228px;
@@ -51,7 +51,7 @@
         </style>
     </head>
     <body>
-        <div id="nav">
+        <div id="nav_index">
             <div class="homePagePanel">
                 <div class="panelTop"></div>
                 <div class="panelBody">

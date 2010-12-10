@@ -9,14 +9,12 @@
     <body>
     	<div id="header"> 
 		    <div class="container clear-both"> 
-		        <a href="/" id="logo"><img src="logo_print.png" alt="nclud™" /></a> 
+		        <a href="/masiva" id="logo"><img src="logo_print.png" alt="nclud™" /></a> 
 		        <a href="#content" class="alt">skip nav</a> 
 		        <ul id="nav"> 
-		            <li class="current"><span><a href="/">Home</a></span></li> 
-		            <li><span><a href="http://nclud.com/about/">About Us</a></span></li> 
-		            <li><span><a href="http://nclud.com/work/">Our Work</a></span></li> 
-		            <li><span><a href="http://nclud.com/process/">Our Process</a></span></li> 
-		            <li><span><a href="http://nclud.com/sketchbook/">Sketchbook</a></span></li><li><span><a href="http://nclud.com/contact/">Contact Us</a></span></li> 
+		            <li class="current"><span><a href="/masiva">Home</a></span></li> 
+		            <li><span><a href="/masiva/damFile">Media Browser</a></span></li> 
+		            <li><span><a href="/masiva/help">Help</a></span></li>		             
 		        </ul> 
 		    </div> 
 		</div> 
