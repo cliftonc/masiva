@@ -80,11 +80,9 @@ class FileManagerService {
 	
 	def createImageThumbnail(String fileId, File file) {
 		
-		log.info("Creating image thumbnail ...")
-		def imageTool = new ImageTool()
-		imageTool.load(file.getBytes())
-		imageTool.thumbnailSpecial(240, 240, 1, 1)  // With the desired thumbnail size
-		imageTool.writeResult("web-app/images/thumbnails/" + fileId + "_thumb.jpg","JPEG")
+		ImageMagickWrapper converter = new ImageMagickWrapper ("tmp",this.log)		
+		converter .thumbnail file.getPath(), fileId, fileId + "_thumb.jpg"
+
 				
 	}
 	
@@ -92,7 +90,7 @@ class FileManagerService {
 		
 		FfmpegWrapper ffmpeg = new FfmpegWrapper("tmp",this.log)		
 		ffmpeg.thumbnail file.getPath(), fileId, fileId + "_thumb.jpg"		
-		ffmpeg.browse file.getPath(), fileId, fileId + "_browse.mp4"		
+		ffmpeg.browse file.getPath(), fileId, fileId + "_browse.mp4"
 		
 	}
 	

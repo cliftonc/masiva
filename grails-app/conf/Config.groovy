@@ -51,7 +51,7 @@ grails.spring.bean.packages = []
 // set per-environment serverURL stem for creating absolute links
 environments {
     production {
-        grails.serverURL = "http://www.changeme.com"
+        grails.serverURL = "http://localhost:8080/${appName}"
     }
     development {
         grails.serverURL = "http://localhost:8080/${appName}"
@@ -90,10 +90,10 @@ log4j = {
 
 rabbitmq {
 	connectionfactory {
-		username = 'damongo'
-		password = 'damongo'
+		username = 'masiva'
+		password = 'masiva'
 		hostname = '127.0.0.1'
-		consumers = 50
+		consumers = 5
 	}
 	queues = {
 		ingestQueue autoDelete: true, durable: true, exclusive: false

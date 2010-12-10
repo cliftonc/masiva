@@ -13,7 +13,7 @@ class FolderPollerJobJob {
 			50,
 			[".*\\.jpeg",".*\\.jpg",".*\\.png",".*\\.mp4",".*\\.mov"],
 			ingestService,
-			500) 
+			5000) 
 		t.scan()		
 		
     }

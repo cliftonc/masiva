@@ -4,7 +4,7 @@ grails {
     port = 27017
     username = null
     password = null
-    databaseName = "damongo"
+    databaseName = "masiva"
   }
 }
 
