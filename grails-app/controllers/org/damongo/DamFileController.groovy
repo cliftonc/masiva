@@ -9,6 +9,7 @@ class DamFileController {
 	
 	// File Manager service
 	def fileManagerService
+	def solrSearchService
 	
     def index = {
         redirect(action: "list", params: params)
@@ -41,12 +42,21 @@ class DamFileController {
 		
 	}
 	
+	def solr = {
+		
+		def damFileInstance = DamFile.get(params.id)
+        if (damFileInstance) {
+			solrSearchService.indexDocument(damFileInstance)
+        }
+		
+	}
+
+	
     def delete = {
         def damFileInstance = DamFile.get(params.id)
         if (damFileInstance) {
             try {
-				damFileInstance.deleteSolr()
-                damFileInstance.delete(flush: true)
+	            damFileInstance.delete(flush: true)
                 flash.message = "${message(code: 'default.deleted.message', args: [message(code: 'damFile.label', default: 'DamFile'), params.id])}"
                 redirect(action: "list")
             }

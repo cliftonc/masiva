@@ -24,15 +24,16 @@ class IngestService {
 			
 			// Add our file to Mongo
 			def mongoFileId = fileManagerService.addFile(msg,fileName,fileType)				
-						
-			// Delete our ingested file
-			tempFile.delete()					
+			tempFile.delete()
 			
-			rabbitSend "solrQueue", mongoFileId
+			if(mongoFileId) {
+				// 	Delete our ingested file						
+				rabbitSend "solrQueue", mongoFileId
+			}
 		
 		} catch (Exception e) {
 		
-			println "Message handling error occcurred : " + e.message			
+			println "An error occurred ingesting : " + fileName + " : " + e.message			
 			tempFile.renameTo tempFile.getName().replace(".queued",".errored")			
 		
 		}

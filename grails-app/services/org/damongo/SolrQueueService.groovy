@@ -7,24 +7,27 @@ import org.springframework.datastore.mapping.mongo.*
 class SolrQueueService {
 	
 	MongoDatastore mongoDatastore
+	SolrSearchService solrSearchService
+	
+	boolean transactional = false	
 	
 	static rabbitQueue = "solrQueue"
 	
 	void handleMessage(msg) {
 
-		try {
+		//try {
 			
 			// Index our domain object
 			mongoDatastore.connect()
 			def damFileInstance = DamFile.get(msg)			
-			damFileInstance.indexSolr()												
+			solrSearchService.indexDocument(damFileInstance)												
 		
-		} catch (Exception e) {
+		//} catch (Exception e) {
 		
-			println "Solr index handling error occcurred : " + e.message			
-			tempFile.renameTo tempFile.getName().replace(".queued",".errored")			
+		//	println "Solr index handling error occcurred : " + e.message			
+		//	tempFile.renameTo tempFile.getName().replace(".queued",".errored")			
 		
-		}
+		//}
 	}	
 	
 	
