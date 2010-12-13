@@ -93,7 +93,7 @@ rabbitmq {
 		username = 'masiva'
 		password = 'masiva'
 		hostname = '127.0.0.1'
-		consumers = 5
+		consumers = 10
 	}
 	queues = {
 		ingestQueue autoDelete: true, durable: true, exclusive: false

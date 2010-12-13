@@ -33,7 +33,7 @@
 										 %>">                   
                             	<div class="asset-image">
                             		<a href="show/${damFileInstance.id}">
-                            			<img title="${damFileInstance.contentType}" class="asset-image" src="${resource(dir:'images/thumbnails',file: damFileInstance.id.toString() + "_thumb.jpg")}"/>                            			                            			
+                            			<img title="${damFileInstance.contentType}" class="asset-image" src="/images/thumbnails/${damFileInstance.id.toString() + '_thumb.jpg'}"/>                            			                            			
                             		</a>                            		
                             	</div>                            	
 							</div>
