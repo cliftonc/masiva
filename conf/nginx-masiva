@@ -4,6 +4,8 @@ server {
 
         listen       80;
         server_name  masiva-server;
+        autoindex on;
+
 
 	# Configure logs
         access_log  /opt/masiva/logs/nginx/masiva.access.log;
@@ -15,7 +17,8 @@ server {
         	index  index.php;
 	}
         
-	# Proxy for local jetty instance
+	
+        # Proxy for local jetty instance
 	location /masiva {
             proxy_pass         http://127.0.0.1:8080/masiva;
             proxy_redirect     off;
@@ -36,6 +39,16 @@ server {
             proxy_busy_buffers_size    64k;
             proxy_temp_file_write_size 64k;
         }
+
+        location /videos {
+            mp4;
+	    root /opt/masiva/src/web-app;
+        }
+
+	location /images {
+	   root /opt/masiva/src/web-app;
+	}
+
 
 ## Parse all .php file in the /opt/masiva/lib/www directory
     location ~ .php$ {

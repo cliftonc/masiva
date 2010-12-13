@@ -1,6 +1,6 @@
 #!/bin/bash
 
-USER="cliftonc"
+USER="ubuntu"
 GROUP="users"
 
 echo "This script will install Masiva in /opt/masiva (you must run this as ROOT), do you want to continue? [y|n]"
